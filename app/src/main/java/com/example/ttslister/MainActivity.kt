@@ -20,8 +20,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
+            val voices = tts.voices
             val engines = tts.engines
-            enginesText.text = "Available TTS Engines: $engines"
+            enginesText.text = "Available TTS Engines: $engines \nAvailable TTS voices: $voices"
         // Engineinfo{name="com.samsung.SMT" in Samsung} and cannot found google tts. Hope it works in other OS
         }
         else {
